@@ -1,6 +1,6 @@
 # Rollup (fresh)
 
-Just another Rollup + Tailwind CSS + TypeScript setup.
+Just another Rollup + Tailwind CSS v2.x + TypeScript setup.
 
 ## Usage
 
