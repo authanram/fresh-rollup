@@ -1,28 +1,15 @@
 module.exports = {
-    future: {
-        defaultLineHeights: true,
-        purgeLayersByDefault: true,
-        removeDeprecatedGapUtilities: true,
-        standardFontWeights: true,
-    },
     purge: {
         enabled: true,
-        content: [
-            './tailwind.ignore',
-            './src/**/*.js',
-            './src/**/*.ts',
-        ],
+        content: ['./tailwind.ignore', './src/**/*.js', './src/**/*.ts'],
         options: {
             defaultExtractor: (content) => content.match(/[\w-/.:]+(?<!:)/g) || [],
-            /*whitelist: [],
-            whitelistPatterns: [
-                /-active$/,
-            ],*/
+            //safelist: [],
         },
     },
     theme: {
         extend: {
-            borderColor: theme => ({
+            borderColor: (theme) => ({
                 default: theme('colors.gray.200', 'currentColor'),
             }),
             // fontSize: {'base': '17px'},
@@ -32,7 +19,7 @@ module.exports = {
                 md: '960px',
                 lg: '1240px',
                 xl: '1400px',
-                print: {raw: 'print'},
+                print: { raw: 'print' },
             },
         },
     },
@@ -40,7 +27,4 @@ module.exports = {
         backgroundColor: ['responsive', 'hover', 'focus', 'active'],
         display: ['responsive', 'last', 'hover', 'focus', 'group-hover'],
     },
-    plugins: [
-        require('@tailwindcss/ui'),
-    ],
 }
